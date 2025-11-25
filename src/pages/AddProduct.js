@@ -8,7 +8,7 @@ const AddProduct = () => {
   
   
   return (
-    <div className="page addproduct">
+    <div className="page-addproduct">
       <form>
         <label htmlFor="name">Name:</label>
         <input

@@ -83,7 +83,63 @@ nav h1 {
 
 .item-quant {
   background-color: var(--primary);
-  border-radius: 15px;
+  border-radius: 15px; 
   padding: 15px;
   margin: auto;
 }
+
+/* Add this to your CSS file */
+.page-addproduct {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+              0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.page-addproduct form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-addproduct label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.page-addproduct input {
+  padding: 10px 12px;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.page-addproduct input:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.page-addproduct button {
+  background: #4A90E2;
+  color: var(--text-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.page-addproduct button:hover {
+  background: #357ABD;
+}
+
