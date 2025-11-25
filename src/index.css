@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 :root {
-  --primary: #a45839;
-  --secondary: #ff765b;
-  --background: #ffe99f;
-  --text-color: #333
-}
+  --primary: #3A6EA5;   
+  --secondary: #223748;      
+  --background: #0E1113;     
+  --surface: #1A1F22;
+  --text-color: #E6E6E6;
+} 
+
 h1,h2,h3 {
   margin: 0;
 }
@@ -48,11 +50,40 @@ nav h1 {
 
 #navigation > * {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--background);
   transition: all 0.5s ease;
 }
 
 #navigation > *:hover {
-  color: var(--background);
+  color: white;
   scale: 1.1;
+}
+
+.item-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.item-card {
+  background-color: var(--text-color);
+  width:100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  transition: all 0.3s ease
+}
+
+.item-card:hover {
+  -webkit-box-shadow: 0px 0px 26px -5px #707070; 
+  box-shadow: 0px 0px 26px -5px #707070;
+  scale: 1.05;
+}
+
+.item-quant {
+  background-color: var(--primary);
+  border-radius: 15px;
+  padding: 15px;
+  margin: auto;
 }
