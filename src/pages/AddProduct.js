@@ -6,10 +6,20 @@ const AddProduct = () => {
   const [quantity, setQuantity] = useState(1)
   const [errorMsg, setErrorMsg] = useState(null)
   
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    if (!name || !descrip || !quantity) {
+      setErrorMsg("Please fill out all fields.")
+      return
+    }
+
+    console.log(name, descrip, quantity)
+  }
   
   return (
     <div className="page-addproduct">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
