@@ -1,20 +1,31 @@
 import { useState } from "react"
+import supabase from "../config/supabaseClient"
 
 const AddProduct = () => {
   const [name, setName] = useState('Item')
-  const [descrip, setDescrip] = useState('')
+  const [description, setDescrip] = useState('')
   const [quantity, setQuantity] = useState(1)
   const [errorMsg, setErrorMsg] = useState(null)
   
   const handleSubmit = async (e) => {
     e.preventDefault()
     
-    if (!name || !descrip || !quantity) {
+    if (!name || !description || !quantity) {
       setErrorMsg("Please fill out all fields.")
       return
     }
 
-    console.log(name, descrip, quantity)
+    const { data, error } = await supabase.from("Items").insert([{ name, description, quantity }]).select()
+
+    if (error) {
+      console.log(error)
+      setErrorMsg(error)
+    }
+
+    if (data) {
+      console.log(data)
+      setErrorMsg(null)
+    }
   }
   
   return (
@@ -28,11 +39,11 @@ const AddProduct = () => {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <label htmlFor="descrip">Description:</label>
+        <label htmlFor="description">Description:</label>
         <input
           type="text"
-          id="descrip"
-          value={descrip}
+          id="description"
+          value={description}
           onChange={(e) => setDescrip(e.target.value)}
         />
 
