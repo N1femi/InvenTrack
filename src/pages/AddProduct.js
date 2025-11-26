@@ -1,7 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 import supabase from "../config/supabaseClient"
 
 const AddProduct = () => {
+  const navigate = useNavigate()
+
   const [name, setName] = useState('Item')
   const [description, setDescrip] = useState('')
   const [quantity, setQuantity] = useState(1)
@@ -25,6 +28,7 @@ const AddProduct = () => {
     if (data) {
       console.log(data)
       setErrorMsg(null)
+      navigate('/')
     }
   }
   
