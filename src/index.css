@@ -88,8 +88,7 @@ nav h1 {
   margin: auto;
 }
 
-/* Add this to your CSS file */
-.page-addproduct {
+.page-addproduct, .page-update {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
@@ -105,7 +104,13 @@ nav h1 {
   gap: 16px;
 }
 
-.page-addproduct label {
+.page-update form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-addproduct, .page-update label {
   font-weight: 600;
   color: #333;
   margin-bottom: 4px;
@@ -120,7 +125,21 @@ nav h1 {
   transition: border-color 0.2s;
 }
 
+.page-update input {
+  padding: 10px 12px;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
 .page-addproduct input:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.page-update input:focus {
   outline: none;
   border-color: #4A90E2;
   box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
@@ -139,7 +158,24 @@ nav h1 {
   margin-top: 8px;
 }
 
+.page-update button {
+  background: #4A90E2;
+  color: var(--text-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
 .page-addproduct button:hover {
+  background: #357ABD;
+}
+
+.page-update button:hover {
   background: #357ABD;
 }
 
